@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #0c0f16;
+    --card-bg: rgba(30, 34, 45, 0.6);
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+}
+
+[data-testid="stAppViewContainer"] {
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+}
+
+[data-testid="stSidebar"] {
+    background-color: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(20px);
+    border-right: var(--glass-border);
+}
+
+h1,
+h2,
+h3 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+div.stButton>button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+div.stButton>button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+div.stButton>button:active {
+    transform: scale(0.98);
+}
+
+[data-testid="stFileUploader"] {
+    background: var(--card-bg);
+    border: 1px dashed rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #a855f7;
+    background: rgba(30, 34, 45, 0.8);
+}
+
+.stChatMessage {
+    background: transparent;
+    border: none;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+[data-testid="stChatMessageContent"] {
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
+}
+
+.stChatMessage[data-testid="user"] [data-testid="stChatMessageContent"] {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+    border-bottom-right-radius: 4px;
+}
+
+.stChatMessage[data-testid="assistant"] [data-testid="stChatMessageContent"] {
+    background: rgba(30, 34, 45, 0.6);
+    border-bottom-left-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stSpinner>div {
+    border-top-color: #a855f7 !important;
+}
+
+[data-testid="stExpander"] {
+    background: transparent;
+    border: var(--glass-border);
+    border-radius: 12px;
+}
+
+div[data-baseweb="input"] {
+    background: rgba(255, 255, 255, 0.03);
+    border: var(--glass-border);
+    border-radius: 12px;
+    color: white;
+}
