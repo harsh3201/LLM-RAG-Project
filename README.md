@@ -19,12 +19,25 @@ A Retrieval-Augmented Generation (RAG) based intelligent document question answe
 3. Activate: `.\venv\Scripts\activate` (Windows)
 4. Install dependencies: `pip install -r requirements.txt`
 5. Run: `uvicorn app.main:app --reload`
+   
+Terminal 1: Start Backend (API)
+powershell
+cd backend
+venv\Scripts\activate
+uvicorn app.main:app --reload
 
 ### Frontend
 1. Navigate to `frontend/`
 2. Create virtual environment (optional, or reuse backend's if appropriate, but keeping separate is cleaner)
 3. Install dependencies: `pip install -r requirements.txt`
 4. Run: `streamlit run app.py`
+5. Terminal 2: Start Frontend (UI)
+
+powershell
+cd frontend
+venv\Scripts\activate
+streamlit run app.py
+Once both are running, open your browser to: http://localhost:8501
 
 ### Website Link 
 https://document-system.streamlit.app/
